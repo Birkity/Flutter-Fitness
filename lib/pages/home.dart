@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -6,20 +7,52 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-          title: Text(
-            'BreakFast',
-            style: TextStyle(
-                fontSize: 18, color: Colors.black, fontWeight: FontWeight.bold),
+      appBar: appBar(),
+    );
+  }
+
+  AppBar appBar() {
+    return AppBar(
+      title: Text(
+        'BreakFast',
+        style: TextStyle(
+            fontSize: 18, color: Colors.black, fontWeight: FontWeight.bold),
+      ),
+      backgroundColor: Colors.white,
+      elevation: 0.0,
+      centerTitle: true,
+      leading: GestureDetector(
+        onTap: (){},
+        child: Container(
+          margin: EdgeInsets.all(10),
+          alignment: Alignment.center,
+          child: SvgPicture.asset(
+            'assets/icons/Arrow - Left 2.svg',
+            height: 20,
+            width: 20,
           ),
-          backgroundColor: Colors.white,
-          elevation: 0.0,
-          centerTitle: true,
-          leading: Container(
+          decoration: BoxDecoration(
+              color: Color(0xffF7f8F8),
+              borderRadius: BorderRadius.circular(10))),
+      ) 
+      
+      actions: [
+        GestureDetector(
+          onTap: () {},
+          child: Container(
               margin: EdgeInsets.all(10),
+              alignment: Alignment.center,
+              width: 37,
+              child: SvgPicture.asset(
+                'assets/icons/dots.svg',
+                height: 5,
+                width: 5,
+              ),
               decoration: BoxDecoration(
-                  color: Colors.black,
-                  borderRadius: BorderRadius.circular(10)))),
+                  color: Color(0xffF7f8F8),
+                  borderRadius: BorderRadius.circular(10))),
+        )
+      ],
     );
   }
 }
