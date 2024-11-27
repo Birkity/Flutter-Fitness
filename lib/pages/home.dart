@@ -10,7 +10,17 @@ class HomePage extends StatelessWidget {
       appBar: appBar(),
       backgroundColor: Colors.white,
       body: Column(
-        children: [_searchField()],
+        children: [
+          _searchField(),
+          Column(children: [
+            Text('Category',
+                style: TextStyle(
+                  color: Colors.black,
+                  fontSize: 18,
+                  fontWeight: FontWeight.w600,
+                ))
+          ]),
+        ],
       ),
     );
   }
