@@ -12,15 +12,12 @@ class HomePage extends StatelessWidget {
         children: [
           Container(
             margin: EdgeInsets.only(top: 40, left: 20, right: 20),
-            decoration: BoxDecoration(
-              boxShadow: [
-                BoxShadow(
+            decoration: BoxDecoration(boxShadow: [
+              BoxShadow(
                   color: Color(0xff1D1617).withOpacity(0.11),
                   blurRadius: 40,
-                  spreadRadius: 0.0
-                )
-              ]
-            ),
+                  spreadRadius: 0.0)
+            ]),
             child: TextField(
               decoration: InputDecoration(
                 filled: true,
@@ -44,20 +41,19 @@ class HomePage extends StatelessWidget {
       elevation: 0.0,
       centerTitle: true,
       leading: GestureDetector(
-        onTap: (){},
+        onTap: () {},
         child: Container(
-          margin: EdgeInsets.all(10),
-          alignment: Alignment.center,
-          child: SvgPicture.asset(
-            'assets/icons/Arrow - Left 2.svg',
-            height: 20,
-            width: 20,
-          ),
-          decoration: BoxDecoration(
-              color: Color(0xffF7f8F8),
-              borderRadius: BorderRadius.circular(10))),
-      ) 
-      
+            margin: EdgeInsets.all(10),
+            alignment: Alignment.center,
+            child: SvgPicture.asset(
+              'assets/icons/Arrow - Left 2.svg',
+              height: 20,
+              width: 20,
+            ),
+            decoration: BoxDecoration(
+                color: Color(0xffF7f8F8),
+                borderRadius: BorderRadius.circular(10))),
+      ),
       actions: [
         GestureDetector(
           onTap: () {},
