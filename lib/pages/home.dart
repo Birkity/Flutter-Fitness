@@ -45,9 +45,37 @@ class _HomePageState extends State<HomePage> {
             Container(
               height: 150,
               color: Colors.green,
-              child: ListView.builder(itemBuilder: (context, index) {
-                return Container();
-              }),
+              child: ListView.separated(
+                  itemCount: categories.length,
+                  scrollDirection: Axis.horizontal,
+                  padding: EdgeInsets.only(
+                    left: 20,
+                    right: 20,
+                  ),
+                  separatorBuilder: (context, index) => SizedBox(
+                        width: 25,
+                      ),
+                  itemBuilder: (context, index) {
+                    return Container(
+                      width: 100,
+                      decoration: BoxDecoration(
+                          color: categories[index].boxColor.withOpacity(0.3),
+                          borderRadius: BorderRadius.circular(16)),
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Container(
+                            height: 50,
+                            width: 50,
+                            decoration: BoxDecoration(
+                              color: Colors.white,
+                              shape: BoxShape.circle,
+                            ),
+                          )
+                        ],
+                      ),
+                    );
+                  }),
             ),
           ]),
         ],
