@@ -7,15 +7,19 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(
-          'BreakFast',
-          style: TextStyle(
-              fontSize: 18, color: Colors.black, fontWeight: FontWeight.bold),
-        ),
-        backgroundColor: Colors.white,
-        elevation: 0.0,
-        centerTitle: true,
-      ),
+          title: Text(
+            'BreakFast',
+            style: TextStyle(
+                fontSize: 18, color: Colors.black, fontWeight: FontWeight.bold),
+          ),
+          backgroundColor: Colors.white,
+          elevation: 0.0,
+          centerTitle: true,
+          leading: Container(
+              margin: EdgeInsets.all(10),
+              decoration: BoxDecoration(
+                  color: Colors.black,
+                  borderRadius: BorderRadius.circular(10)))),
     );
   }
 }
