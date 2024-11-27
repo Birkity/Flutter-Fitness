@@ -62,7 +62,7 @@ class _HomePageState extends State<HomePage> {
                           color: categories[index].boxColor.withOpacity(0.3),
                           borderRadius: BorderRadius.circular(16)),
                       child: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         children: [
                           Container(
                             height: 50,
@@ -70,6 +70,19 @@ class _HomePageState extends State<HomePage> {
                             decoration: BoxDecoration(
                               color: Colors.white,
                               shape: BoxShape.circle,
+                            ),
+                            child: Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child:
+                                  SvgPicture.asset(categories[index].iconPath),
+                            ),
+                          ),
+                          Text(
+                            categories[index].name,
+                            style: TextStyle(
+                              fontWeight: FontWeight.w400,
+                              color: Colors.black,
+                              fontSize: 14,
                             ),
                           )
                         ],
