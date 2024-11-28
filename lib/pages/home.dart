@@ -65,6 +65,7 @@ class _HomePageState extends State<HomePage> {
                         borderRadius: BorderRadius.circular(20),
                       ),
                       child: Column(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         children: [
                           SvgPicture.asset(diets[index].iconPath),
                           Text(
@@ -86,6 +87,15 @@ class _HomePageState extends State<HomePage> {
                               fontWeight: FontWeight.w400,
                             ),
                           ),
+                          Container(
+                            height: 45,
+                            width: 130,
+                            decoration: BoxDecoration(
+                                gradient: LinearGradient(colors: [
+                              Color(0xff9DCEFF),
+                              Color(0xff92A3FD)
+                            ])),
+                          )
                         ],
                       ),
                     );
