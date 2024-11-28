@@ -33,6 +33,27 @@ class _HomePageState extends State<HomePage> {
             height: 40,
           ),
           _categoriesSection(),
+          SizedBox(
+            height: 40,
+          ),
+          Column(
+            children: [
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Text(
+                  'Recommendation\n for diets',
+                  style: TextStyle(
+                    color: Colors.black,
+                    fontSize: 18,
+                    fontWeight: FontWeight.w600,
+                  ),
+                ),
+              ),
+              SizedBox(
+                height: 15,
+              ),
+            ],
+          )
         ],
       ),
     );
