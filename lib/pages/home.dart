@@ -68,33 +68,53 @@ class _HomePageState extends State<HomePage> {
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         children: [
                           SvgPicture.asset(diets[index].iconPath),
-                          Text(
-                            diets[index].name,
-                            style: TextStyle(
-                              fontWeight: FontWeight.w500,
-                              color: Colors.black,
-                              fontSize: 15,
-                            ),
-                          ),
-                          Text(
-                            diets[index].level +
-                                ' ' +
-                                diets[index].duration +
-                                diets[index].calorie,
-                            style: TextStyle(
-                              color: Color(0xff7B6F72),
-                              fontSize: 13,
-                              fontWeight: FontWeight.w400,
-                            ),
+                          Column(
+                            children: [
+                              Text(
+                                diets[index].name,
+                                style: TextStyle(
+                                  fontWeight: FontWeight.w500,
+                                  color: Colors.black,
+                                  fontSize: 15,
+                                ),
+                              ),
+                              Text(
+                                diets[index].level +
+                                    ' ' +
+                                    diets[index].duration +
+                                    diets[index].calorie,
+                                style: TextStyle(
+                                  color: Color(0xff7B6F72),
+                                  fontSize: 13,
+                                  fontWeight: FontWeight.w400,
+                                ),
+                              ),
+                            ],
                           ),
                           Container(
                             height: 45,
                             width: 130,
+                            child: Center(
+                              child: Text(
+                                'View',
+                                style: TextStyle(
+                                    color: diets[index].viewIsSelected
+                                        ? Colors.white
+                                        : const Color(0xffC58BF2),
+                                    fontWeight: FontWeight.w600,
+                                    fontSize: 14),
+                              ),
+                            ),
                             decoration: BoxDecoration(
                                 gradient: LinearGradient(colors: [
-                              Color(0xff9DCEFF),
-                              Color(0xff92A3FD)
-                            ])),
+                                  diets[index].viewIsSelected
+                                      ? const Color(0xff9DCEFF)
+                                      : Colors.transparent,
+                                  diets[index].viewIsSelected
+                                      ? const Color(0xff92A3FD)
+                                      : Colors.transparent
+                                ]),
+                                borderRadius: BorderRadius.circular(50)),
                           )
                         ],
                       ),
