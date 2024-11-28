@@ -1,4 +1,5 @@
 import 'package:fitness/models/category_model.dart';
+import 'package:fitness/models/diet_model.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
@@ -11,14 +12,16 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   List<CategoryModel> categories = [];
+  List<DietModel> diets = [];
 
-  void _getCategories() {
+  void _getInitialInfo() {
     categories = CategoryModel.getCategories();
+    diets = DietModel.getDiets();
   }
 
   @override
   Widget build(BuildContext context) {
-    _getCategories();
+    _getInitialInfo();
     return Scaffold(
       appBar: appBar(),
       backgroundColor: Colors.white,
