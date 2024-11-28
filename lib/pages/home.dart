@@ -28,26 +28,21 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       appBar: appBar(),
       backgroundColor: Colors.white,
-      body: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          _searchField(),
-          SizedBox(
-            height: 40,
-          ),
-          _categoriesSection(),
-          SizedBox(
-            height: 40,
-          ),
-          _dietSection(),
-          SizedBox(
-            height: 40,
-          ),
-          _popularSection(),
-          const SizedBox(
-            height: 40,
-          ),
-        ],
+      body: SingleChildScrollView(
+        // Allow vertical scrolling
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            _searchField(),
+            SizedBox(height: 40),
+            _categoriesSection(),
+            SizedBox(height: 40),
+            _dietSection(),
+            SizedBox(height: 40),
+            _popularSection(),
+            const SizedBox(height: 40),
+          ],
+        ),
       ),
     );
   }
