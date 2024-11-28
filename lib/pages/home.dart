@@ -51,7 +51,7 @@ class _HomePageState extends State<HomePage> {
       ),
       Container(
         height: 150,
-        color: Colors.green,
+        color: Colors.white,
         child: ListView.separated(
             itemCount: categories.length,
             scrollDirection: Axis.horizontal,
