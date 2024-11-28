@@ -37,6 +37,7 @@ class _HomePageState extends State<HomePage> {
             height: 40,
           ),
           Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Padding(
                 padding: const EdgeInsets.all(8.0),
@@ -51,6 +52,24 @@ class _HomePageState extends State<HomePage> {
               ),
               SizedBox(
                 height: 15,
+              ),
+              Container(
+               color: Colors.blue,
+               height: 240,
+               child: ListView.separated(
+                itemBuilder: (context, index) {
+                  return Container(
+                    width: 210,
+                    decoration: BoxDecoration(
+                      color: diets[index].boxColor,
+                      borderRadius: BorderRadius.circular(20),
+                    ),
+                  )
+                } , 
+                separatorBuilder: (context, index) => SizedBox(width: 25,), 
+                itemCount: diets.length,
+                scrollDirection: Axis.horizontal,),
+              
               ),
             ],
           )
